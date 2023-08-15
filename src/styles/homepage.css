@@ -1,0 +1,136 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 1rem 3rem;
+}
+
+.home-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 425px;
+    z-index: 5;
+}
+
+.home-heading {
+    font-size: 46px;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+.home-fancy {
+    color: var(--accent);
+}
+
+.home-desc {
+    margin-bottom: 15px;
+    z-index: 5;
+}
+
+.home-btn {
+    padding: 20px;
+    z-index: 5;
+    background-color: var(--secondary);
+    color: var(--text);
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.home-btn::before {
+    content: 'Start Tracking';
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 8%;
+    left: 4%;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    background-color: var(--accent);
+    z-index: 1;
+    transition: all .2s ease;
+    font-family: var(--font);
+}
+
+.home-btn:hover::before {
+    top: 0;
+    left: 0;
+}
+
+.learn-more-link {
+    font-size: 15px;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+/*background image*/
+.home-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--homepage-image-url);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+/*Adding a tint to the image for better text readability*/
+.home-image-container::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+
+/*Making the homepage responsive*/
+@media (max-width: 850px) {
+    .home-container {
+        justify-content: center;
+    }
+    .home-info-container {
+        align-items: center;
+        text-align: center;
+    }
+    .home-image-container {
+        background-position: center;
+        background-size: cover;
+    }
+    .home-image-container::before  {
+        background-color: rgba(0, 0, 0, .7);
+    }
+}
+
+/*Mobile Mode*/
+@media (max-width: 500px) {
+    .home-container {
+        padding: 1rem;
+    }
+    .home-info-container {
+        padding: .5rem;
+        max-width: 100%;
+    }
+    .home-heading {
+        font-size: 32px;
+    }
+}
